@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style>
+		#main {
+			width: 270px;
+			padding: 0 8px;
+			font-size: 14px;
+		}
+
+		.row {
+			display: flex;
+			line-height: 25px;
+			margin-bottom: 5px;
+		}
+
+		.row label {
+			width: 80px;
+		}
+
+		.save {
+			clear: both;
+			text-align: right;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="main">
+		<h2>盘口分析</h2>
+		<div id="renounced_mint">mint权限丢弃 <span>未知</span></div>
+		<div id="is_burn">烧池子 <span>未知</span></div>
+		<div id="not_black_list">非黑名单 <span>未知</span></div>
+		<div id="top_10_holder">top10持仓&lt;30% <span>未知</span></div>
+		<div id="holder_count">持仓人数&gt;300 <span>未知</span></div>
+
+		<div id="market_value">市值&gt;$80k <span>未知</span></div>
+		<div id="initial_quote_reserve">池子初始值&lt;79 sol <span>未知</span></div>
+		<div id="quote_reserve">池子当前值&gt;79 sol <span>未知</span></div>
+		<div>1h买单数&gt;1000 <span>未知</span></div>
+		<div>1h买单数&gt;卖单数 <span>未知</span></div>
+
+		<div id="profit_check">前50获利数&gt;25 <span>未知</span></div>
+		<div id="bad_wallet_check">获利账户资金流出超过50%&gt;5 <span>未知</span></div>
+		<div id="flow_out_check">净资产超过(资金流入+总利润)*2&gt;5 <span>未知</span></div>
+
+
+		<!-- <div class="save">
+			<button id="data_check">开始分析</button>
+		</div> -->
+
+
+	</div>
+	<script src="popup.js"></script>
+</body>
+
+</html>
