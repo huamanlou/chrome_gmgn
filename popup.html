@@ -6,47 +6,142 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title></title>
 	<style>
+		body {
+			border: 0;
+			margin: 0;
+			padding: 0;
+			font-size: 13px;
+			background-color: rgb(17 27 17);
+			color: #ededed;
+		}
+
 		#main {
-			width: 270px;
+			width: 310px;
 			padding: 0 8px;
-			font-size: 14px;
 		}
 
-		.row {
+		#main #gmgn_id {
+			word-break: break-all;
+		}
+
+		.box {
+			background-color: #26282c;
+			margin: 10px 0;
+			border-radius: 8px;
+			padding: 3px
+		}
+
+		.box>div {
 			display: flex;
-			line-height: 25px;
-			margin-bottom: 5px;
+			min-height: 22px;
+			border-bottom: 1px solid #494b4f;
+			padding: 3px
 		}
 
-		.row label {
-			width: 80px;
+		.box>div:last-child {
+			border-bottom: none;
 		}
 
-		.save {
-			clear: both;
-			text-align: right;
+		.box div>div:first-child {
+			width: 190px
+		}
+
+		.box div>div:nth-child(2) {
+			width: 60px
+		}
+
+		.box div span {
+			display: block;
+			width: 18px;
+			height: 18px;
+			background-size: cover;
+		}
+
+		.success {
+			color: #88d693
+		}
+
+		.success span {
+			background-image: url(./img/success.png);
+		}
+
+		.fail {
+			color: #f04866;
+		}
+
+		.fail span {
+			background-image: url(./img/fail.png);
+		}
+
+		.unknow {
+			color: #ededed;
+		}
+
+		.unknow span {
+			background-image: url(./img/unknow.png);
 		}
 	</style>
 </head>
 
 <body>
 	<div id="main">
-		<h2>盘口分析</h2>
-		<div id="renounced_mint">mint权限丢弃 <span>未知</span></div>
-		<div id="is_burn">烧池子 <span>未知</span></div>
-		<div id="not_black_list">非黑名单 <span>未知</span></div>
-		<div id="top_10_holder">top10持仓&lt;30% <span>未知</span></div>
-		<div id="holder_count">持仓人数&gt;300 <span>未知</span></div>
+		<h4 id="gmgn_id"></h4>
+		<div class="box">
+			<div id="renounced_mint" class="unknow">
+				<div>mint权限丢弃</div>
+				<div class="data"></div><span></span>
+			</div>
+			<div id="is_burn" class="unknow">
+				<div>烧池子</div>
+				<div class="data"></div><span></span>
+			</div>
+			<div id="not_black_list" class="unknow">
+				<div>非黑名单</div>
+				<div class="data"></div><span></span>
+			</div>
+			<div id="top_10_holder" class="unknow">
+				<div>top10持仓&lt;30%</div>
+				<div class="data">未知</div><span></span>
+			</div>
+		</div>
+		<div class="box">
+			<div id="holder_count" class="unknow">
+				<div>持仓人数&gt;300</div>
+				<div class="data">未知</div><span></span>
+			</div>
 
-		<div id="market_value">市值&gt;$80k <span>未知</span></div>
-		<div id="initial_quote_reserve">池子初始值&lt;79 sol <span>未知</span></div>
-		<div id="quote_reserve">池子当前值&gt;79 sol <span>未知</span></div>
-		<div>1h买单数&gt;1000 <span>未知</span></div>
-		<div>1h买单数&gt;卖单数 <span>未知</span></div>
+			<div id="market_value" class="unknow">
+				<div>市值&gt;$80k</div>
+				<div class="data">未知</div><span></span>
+			</div>
+			<div id="initial_quote_reserve" class="unknow">
+				<div>池子初始值&gt;79 sol </div>
+				<div class="data">未知</div><span></span>
+			</div>
+			<div id="quote_reserve" class="unknow">
+				<div>池子当前值&gt;100 sol </div>
+				<div class="data">未知</div><span></span>
+			</div>
+			<!-- <div>1h买单数&gt;1000 <div class="data">未知</div><span>未知</span></div>
+			<div>1h买单数&gt;卖单数 <div class="data">未知</div><span>未知</span></div> -->
+		</div>
+		<div class="box">
+			<div id="profit_check" class="unknow">
+				<div>前50获利数&gt;25 </div>
+				<div class="data">未知</div><span></span>
+			</div>
+			<div id="bad_wallet_check" class="unknow">
+				<div>获利账户资金流出超过50%&lt;5 </div>
+				<div class="data">未知</div><span></span>
+			</div>
+			<div id="flow_out_check" class="unknow">
+				<div>净资产超过(资金流入+总利润)*2&lt;5 </div>
+				<div class="data">未知</div><span></span>
+			</div>
+		</div>
 
-		<div id="profit_check">前50获利数&gt;25 <span>未知</span></div>
-		<div id="bad_wallet_check">获利账户资金流出超过50%&gt;5 <span>未知</span></div>
-		<div id="flow_out_check">净资产超过(资金流入+总利润)*2&gt;5 <span>未知</span></div>
+
+
 
 
 		<!-- <div class="save">
